@@ -44,9 +44,9 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 gem "sassc-rails"
-gem 'bootstrap', '~> 5.0.2'
-gem 'jquery-rails'
 gem "font-awesome-sass"
+
+gem "tailwindcss-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
