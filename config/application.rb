@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,14 +15,15 @@ module Group1
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    # 2025_01_25_追加（rails g ... コマンドの設定）
+    config.generators.system_tests = nil
+    config.generators do |g|
+      g.skip_routes true # ルーティングの記述を加えないようにする
+      g.helper false # ヘルパーファイルを自動生成しないようにする
+      g.test_framework nil # テストフレームワークを使わないようにする
+    end
 
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
+    config.time_zone = "Tokyo"
   end
 end
