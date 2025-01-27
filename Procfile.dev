@@ -1,1 +1,2 @@
+# web: bin/rails server -> 削除
 css: bin/rails tailwindcss:watch
