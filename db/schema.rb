@@ -11,7 +11,6 @@
 # migrations use external dependencies or application code.
 
 # It's strongly recommended that you check this file into your version control system.
-# commit名変更用
 
 ActiveRecord::Schema[7.0].define(version:) do
 end

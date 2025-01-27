@@ -41,7 +41,6 @@ gem "sassc-rails"
 gem "tailwindcss-rails"
 
 ### gemの追加場所 ###
-# commit名変更用
 gem "draper"
 
 gem "meta-tags", require: "meta_tags"
