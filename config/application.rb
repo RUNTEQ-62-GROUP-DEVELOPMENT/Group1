@@ -16,6 +16,7 @@ module Group1
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     # 2025_01_25_追加（rails g ... コマンドの設定）
+    # commit名変更用
     config.generators.system_tests = nil
     config.generators do |g|
       g.skip_routes true # ルーティングの記述を加えないようにする

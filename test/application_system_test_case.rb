@@ -1,3 +1,4 @@
+# commit名変更用
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
