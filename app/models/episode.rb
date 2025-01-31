@@ -1,6 +1,7 @@
 class Episode < ApplicationRecord
-  belongs_to :user
-  belongs_to :post
-
-  validates :body, presence: true
-end
+    belongs_to :user
+    belongs_to :post
+  
+    validates :body, presence: true
+  end
+  
