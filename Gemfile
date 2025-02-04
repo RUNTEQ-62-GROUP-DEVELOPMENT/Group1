@@ -44,6 +44,8 @@ gem "tailwindcss-rails"
 gem "draper"
 
 gem "meta-tags", require: "meta_tags"
+
+gem 'acts-as-taggable-on'
 ### ここまで ###
 
 group :development, :test do
