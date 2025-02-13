@@ -46,6 +46,10 @@ gem "draper"
 gem "meta-tags", require: "meta_tags"
 
 gem 'acts-as-taggable-on'
+
+gem "faker"
+
+gem "kaminari"
 ### ここまで ###
 
 group :development, :test do

@@ -5,6 +5,5 @@ class Post < ApplicationRecord
     has_many :tags, through: :post_tags
   
     validates :title, presence: true
-    validates :meaning, presence: true
+    validates :body, presence: true
   end
-  

@@ -1,0 +1,22 @@
+<div class="mb-3">RUNTEQ百科事典とは？</div>
+<div class="mb-3">
+  <ul>
+    <li>
+    RUNTEQコミュニティ内で起こった印象的なワードやエピソードを記録するwikiアプリです
+    </li>
+    <li>
+    楽しかった思い出や苦労した課題や開発などを記録し、卒業時に見返すことでRUNTEQ生活を振り返れるアルバムのようなアプリを目指しています
+    </li>
+  </ul>
+</div>
+<div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% if @posts.present? %>
+          <%= render @posts %>
+        <% else %>
+          <div class="mb-3">掲示板がありません</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
