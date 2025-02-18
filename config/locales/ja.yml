@@ -4,3 +4,5 @@ ja:
       signed_in: "ログインしました"
       new:
         title: "ログイン"
+    failure:
+      invalid: "無効なメールアドレスまたはパスワードです。"

@@ -46,6 +46,10 @@ gem "draper"
 gem "meta-tags", require: "meta_tags"
 
 gem 'acts-as-taggable-on'
+
+gem 'rails-i18n'
+
+gem 'devise-i18n'
 ### ここまで ###
 
 group :development, :test do
