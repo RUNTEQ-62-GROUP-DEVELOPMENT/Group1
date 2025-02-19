@@ -1,22 +1,51 @@
-<div class="mb-3">RUNTEQ百科事典とは？</div>
-<div class="mb-3">
-  <ul>
-    <li>
-    RUNTEQコミュニティ内で起こった印象的なワードやエピソードを記録するwikiアプリです
-    </li>
-    <li>
-    楽しかった思い出や苦労した課題や開発などを記録し、卒業時に見返すことでRUNTEQ生活を振り返れるアルバムのようなアプリを目指しています
-    </li>
-  </ul>
-</div>
-<div class="row">
-    <div class="col-12">
-      <div class="row">
-        <% if @posts.present? %>
-          <%= render @posts %>
-        <% else %>
-          <div class="mb-3">掲示板がありません</div>
-        <% end %>
-      </div>
+<div class="bg-white py-6 sm:py-8 lg:py-12 mx-auto">
+  <!-- text - start -->
+  <div class="mb-10 md:mb-16 w-full text-left">
+    <!-- トグルボタン -->
+    <h2 class="mb-4 text-2xl font-bold text-[#373735] md:mb-6 lg:text-2xl cursor-pointer" onclick="toggleDetails()">
+      ▼RUNTEQ百科事典とは？
+    </h2>
+
+    <!-- トグルされるコンテンツ -->
+    <div id="toggleContent" class="transition-all duration-300 overflow-hidden max-h-0 opacity-0">
+      <ul class="mx-auto max-w-screen-md text-[#373735] md:text-md space-y-2 list-disc list-inside">
+        <li>RUNTEQコミュニティ内で起こった印象的なワードやエピソードを記録するwikiアプリです</li>
+        <li>楽しかった思い出や苦労した課題や開発などを記録し、卒業時に見返すことでRUNTEQ生活を振り返れるアルバムのようなアプリを目指しています</li>
+      </ul>
     </div>
   </div>
+  <!-- text - end -->
+
+  <!-- posts - start -->
+  <div class="mb-4">
+    <h3 class="text-left text-xl font-bold text-[#373735]">登録ワード一覧</h3>
+  </div>
+  <!-- モバイルでは1列、タブレットでは2列、PC以上の大きな画面では3列で表示 -->
+  <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-full justify-center">
+    <% if @posts.present? %>
+      <!-- 各ポストをループして表示 -->
+      <%= render @posts %>
+      <%= paginate @posts %> <!-- ページネーション -->
+    <% else %>
+      <!-- ポストがない場合のメッセージ -->
+      <div class="col-span-3 text-center mb-3 text-gray-600">掲示板がありません</div>
+    <% end %>
+  </div>
+  <!-- posts - end -->
+</div>
+
+<!-- JavaScript -->
+<script>
+  function toggleDetails() {
+    var content = document.getElementById("toggleContent");
+
+    // トグルでmax-heightとopacityを制御
+    if (content.classList.contains("max-h-0")) {
+      content.classList.remove("max-h-0", "opacity-0");
+      content.classList.add("max-h-full", "opacity-100");
+    } else {
+      content.classList.remove("max-h-full", "opacity-100");
+      content.classList.add("max-h-0", "opacity-0");
+    }
+  }
+</script>
