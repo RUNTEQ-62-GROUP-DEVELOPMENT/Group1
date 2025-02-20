@@ -2,7 +2,6 @@ class EpisodesController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[create]
 
   def create
-    binding.pry
     @episode = current_or_guest_user.episodes.build(episode_params)
     if @episode.save
       redirect_to post_path(episode_params[:post_id])
