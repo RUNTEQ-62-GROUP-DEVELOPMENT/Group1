@@ -2,6 +2,9 @@
 
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  def current_or_guest_user
+    current_user || gest_user = User.find(0)
+  end
 
   protected
 
