@@ -10,23 +10,21 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <%# ------動作確認用のコード------ %> 
-  <header>
-   <% if user_signed_in? %>
-     <li>
-       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-     </li>
-   <% else %>
-     <li>
-       <%= link_to "新規登録", new_user_registration_path %>
-     </li>
-     <li>
-       <%= link_to "ログイン", new_user_session_path %>
-     </li>
-   <% end %>
-  </header>
-  <%# ------ここまで------ %>
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+      <% end %>
+    </header>
     <div class="container mt-10 px-10">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
