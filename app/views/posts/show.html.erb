@@ -17,4 +17,19 @@
       </article>
     </div>
   </div>
+  <div class="flex justify-center">
+    <div class="w-full lg:w-8/12">
+      <table class="w-full border-collapse border border-gray-200">
+        <h1 class="text-3xl font-bold"><%= "エピソード" %></h1>
+        <tbody id="table-episode">
+            <% if @post.episodes.empty? %>
+              <p>エピソードはまだありません</p>
+            <% else %>
+              <%= render @episodes %>
+            <% end %>
+        </tbody>
+      </table>
+      <%= render 'episodes/form', episode: @episode, post: @post %>
+    </div>
+  </div>
 </div>

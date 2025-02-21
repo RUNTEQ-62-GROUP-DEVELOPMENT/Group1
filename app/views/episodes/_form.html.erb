@@ -1,0 +1,16 @@
+<div class="flex justify-center mb-3" id="episode-form">
+  <div class="w-full lg:w-8/12">
+    <%= form_with model: episode, url: post_episodes_path(post) do |f| %>
+      <% # render 'shared/error_messages', object: f.object %>
+
+      <!-- ラベル -->
+      <%= f.label :body, "エピソードを追加", class: "block text-sm font-medium text-gray-700 mb-1" %>
+
+      <!-- テキストエリア -->
+      <%= f.text_area :body, class: "form-control w-full p-2 border border-gray-300 rounded mb-3", rows: "4", placeholder: "この思い出にまつわるエピソードを教えてください！" %>
+
+      <!-- 送信ボタン -->
+      <%= f.submit "追加", class: "bg-blue-500 text-white font-semibold px-4 py-2 rounded hover:bg-blue-600" %>
+    <% end %>
+  </div>
+</div>
