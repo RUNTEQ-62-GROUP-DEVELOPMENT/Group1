@@ -1,0 +1,14 @@
+<header>
+  <nav class="bg-stone-100">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-50">
+      <%= link_to '/' do %>
+        <%= image_tag 'logo.png', size: "195x23" %>
+      <% end %>
+      <ul>
+        <li class="text-base mr-5">
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
