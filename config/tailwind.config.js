@@ -19,5 +19,5 @@ module.exports = {
     // require('@tailwindcss/typography'),
     // require('@tailwindcss/container-queries'),
   ],
-  sefelist: ['alert-success', 'alert-danger'],
+  safelist: ['alert-success', 'alert-danger'],
 }
