@@ -18,5 +18,6 @@ module.exports = {
     // require('@tailwindcss/forms'),
     // require('@tailwindcss/typography'),
     // require('@tailwindcss/container-queries'),
-  ]
+  ],
+  sefelist: ['alert-success', 'alert-danger'],
 }
