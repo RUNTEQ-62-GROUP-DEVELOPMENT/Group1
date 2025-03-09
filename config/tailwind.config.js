@@ -18,5 +18,6 @@ module.exports = {
     // require('@tailwindcss/forms'),
     // require('@tailwindcss/typography'),
     // require('@tailwindcss/container-queries'),
-  ]
+  ],
+  safelist: ['alert-success', 'alert-notice','alert-danger', 'alert-alert'],
 }

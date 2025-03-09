@@ -2,12 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
+  /* .btn-primary {
     @apply py-2 px-4 bg-blue-200;
+  } */
+  /* 成功フラッシュメッセージ */
+  .alert-success{
+    @apply p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50;
+  }
+  /* 成功フラッシュメッセージ(Device関連) */
+  .alert-notice{
+    @apply p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50;
+  }
+  /* 失敗フラッシュメッセージ */
+  .alert-danger{
+    @apply p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50;
+  }
+  /* 失敗フラッシュメッセージ(Device関連) */
+  .alert-alert{
+    @apply p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50;
   }
 }
 
-*/
