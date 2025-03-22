@@ -10,7 +10,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
+  <body  class="flex flex-col min-h-screen">
     <% if user_signed_in? %>
       <%= render 'shared/header' %>
     <% else %>
@@ -19,8 +19,9 @@
     <div class="container mx-auto mt-5">
       <%= render 'shared/flash_message' %>
     </div>
-    <main class="container mx-auto mt-10 px-5 flex">
+    <main class="container flex-grow mx-auto mt-10 px-5 flex">
       <%= yield %>
     </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>
