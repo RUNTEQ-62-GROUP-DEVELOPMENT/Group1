@@ -13,6 +13,11 @@ class EpisodesController < ApplicationController
     end
   end
 
+  def destroy
+    @episode = current_user.episodes.find(params[:id])
+    @episode.destroy!
+  end
+
 
   private
 

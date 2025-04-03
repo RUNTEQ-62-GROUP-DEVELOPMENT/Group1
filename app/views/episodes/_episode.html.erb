@@ -7,4 +7,20 @@
     <h3 class="text-sm font-semibold"><%= episode.user.name %></h3>
     <p class="text-gray-700"><%= simple_format(episode.body) %></p>
   </td>
+  <% if current_user.own?(episode) %>
+    <td class="action">
+      <ul class="flex justify-end space-x-2">
+        <li>
+          <%= link_to "#", class: "edit-comment-link" do %>
+            <i class="bi bi-pencil-fill"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to episode_path(episode), class: "delete-episode-link", data: { turbo_method: :delete, turbo_confirm: "削除しますか?" } do %>
+            <i class="bi bi-trash-fill"></i>
+          <% end %>
+        </li>
+      </ul>
+    </td>
+  <% end %>
 </tr>
