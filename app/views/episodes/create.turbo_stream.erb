@@ -1,0 +1,12 @@
+<% if @episode.errors.present? %>
+  <%= turbo_stream.replace "episode-form" do %>
+    <%= render 'episodes/form', episode: @episode, post: @episode.post %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.prepend "table-episode" do %>
+    <%= render 'episodes/episode', episode: @episode %>
+  <% end %>
+  <%= turbo_stream.replace "episode-form" do %>
+    <%= render 'episodes/form', episode: Episode.new, post: @episode.post %>
+  <% end %>
+<% end %>

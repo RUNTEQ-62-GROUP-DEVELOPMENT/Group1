@@ -3,14 +3,12 @@ class EpisodesController < ApplicationController
 
   def create
     @episode = current_or_guest_user.episodes.build(episode_params)
-    if @episode.save
-      redirect_to post_path(episode_params[:post_id]),success: 'エピソードを投稿しました'
-    else
-      @post = Post.find(episode_params[:post_id])
-      @episodes = @post.episodes.includes(:user).order(created_at: :desc)
-      flash.now[:danger] = 'エピソードを投稿できませんでした'
-      render template: "posts/show", status: :unprocessable_entity
-    end
+    @episode.save
+  end
+
+  def destroy
+    @episode = current_user.episodes.find(params[:id])
+    @episode.destroy!
   end
 
 
