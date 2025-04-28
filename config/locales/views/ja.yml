@@ -1,0 +1,19 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+  defaults:
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新出来ませんでした"
+      require_login: ログインしてください
+  posts:
+    new:
+      title: ワード作成
+    edit:
+      title: ワード編集
+    show:
+      title: ワード詳細
