@@ -9,7 +9,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to post_path(@post), success: "ワードを投稿しました"
+    else
+      flash.now[:danger] = "ワードを投稿できませんでした"
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
