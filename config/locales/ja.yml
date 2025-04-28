@@ -9,7 +9,7 @@ ja:
   activerecord:
     models:
       post: ワード
-  attributes:
-    post:
-      title: ワード
-      body: 意味
+    attributes:
+      post:
+        title: ワード
+        body: 意味
