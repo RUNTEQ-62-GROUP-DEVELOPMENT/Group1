@@ -24,6 +24,14 @@ class PostsController < ApplicationController
     @episodes = @post.episodes.includes(:user).order(created_at: :desc)
   end
 
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
+
+  def update
+    @post = current_user.posts.find(params[:id])
+  end
+
   private
 
   def post_params
