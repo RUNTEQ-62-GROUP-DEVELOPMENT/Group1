@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :authenticate_user!
   add_flash_types :success, :danger
   # def current_or_guest_user
   #   current_user || gest_user = User.find(0) || User.create!(id: 0, name: "Gest", email: "gest@test.com", password: "gestuser")
