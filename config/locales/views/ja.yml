@@ -8,6 +8,8 @@ ja:
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成出来ませんでした"
+      posted: "%{item}を投稿しました"
+      not_posted: "%{item}を投稿出来ませんでした"
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新出来ませんでした"
       require_login: ログインしてください

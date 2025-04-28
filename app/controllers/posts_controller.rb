@@ -11,9 +11,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to post_path(@post), success: "ワードを投稿しました"
+      redirect_to post_path(@post), success: t('defaults.flash_message.posted', item: Post.model_name.human)
     else
-      flash.now[:danger] = "ワードを投稿できませんでした"
+      flash.now[:danger] = t('defaults.flash_message.not_posted', item: Post.model_name.human)
       render :new, status: :unprocessable_entity
     end
   end
@@ -31,9 +31,9 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), success: "ワードを更新しました"
+      redirect_to post_path(@post), success: t('defaults.flash_message.updated', item: Post.model_name.human)
     else
-      flash.now[:danger] = "ワードを更新できませんでした"
+      flash.now[:danger] = t('defaults.flash_message.not_updated', item: Post.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
