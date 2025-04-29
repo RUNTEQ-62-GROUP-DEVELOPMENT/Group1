@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: %i[create]
+  skip_before_action :authenticate_user!, only: %i[create]
 
   def create
     @episode = current_or_guest_user.episodes.build(episode_params)
