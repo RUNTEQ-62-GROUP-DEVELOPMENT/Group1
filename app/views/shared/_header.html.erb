@@ -6,13 +6,13 @@
     <% end %>
       <ul class="flex">
         <li class="text-base mr-12">
-          <%= link_to "ワードを登録", '#' %>
+          <i class="fa-regular fa-square-plus pr-1"></i><%= link_to "ワードを登録", '#' %>
         </li>
         <li class="text-base mr-12">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
         <li class="text-base mr-5">
-          <div><%= current_user.name %></div>
+          <div><i class="fa-regular fa-user pr-1"></i><%= current_user.name %></div>
         </li>
       </ul>
     </div>
