@@ -6,3 +6,10 @@ ja:
         title: "ログイン"
     failure:
       invalid: "無効なメールアドレスまたはパスワードです。"
+  activerecord:
+    models:
+      post: ワード
+    attributes:
+      post:
+        title: ワード
+        body: 意味
