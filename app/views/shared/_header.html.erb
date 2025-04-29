@@ -5,14 +5,16 @@
       <%= image_tag 'logo.png', size: "195x23" %>
     <% end %>
       <ul class="flex">
-        <li class="text-base mr-12">
-          <%= link_to "ワードを登録", new_post_path %>
+        <li class="text-base mr-12 flex"">
+          <%= link_to new_post_path do %>
+            <i class="fa-regular fa-square-plus pr-1"></i><span>ワードを登録</span>
+          <% end %>
         </li>
         <li class="text-base mr-12">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
         <li class="text-base mr-5">
-          <div><%= current_user.name %></div>
+          <div><i class="fa-regular fa-user pr-1"></i><%= current_user.name %></div>
         </li>
       </ul>
     </div>
