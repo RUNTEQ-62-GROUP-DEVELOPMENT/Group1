@@ -22,18 +22,20 @@
       </article>
     </div>
   </div>
-  <div class="w-full lg:w-2/3">
-    <table class="w-full border-gray-200 mb-3">
-      <h2 class="text-2xl mt-5 font-semibold"><%= "エピソード" %></h2>
-      <div class="border-b border-gray-200 mb-1"></div>
-      <tbody id="table-episode">
-          <% if @post.episodes.empty? %>
-            <p>エピソードはまだありません</p>
-          <% else %>
-            <%= render @episodes %>
-          <% end %>
-      </tbody>
-    </table>
-    <%= render 'episodes/form', episode: @episode, post: @post %>
+  <div class="flex justify-center">
+    <div class="w-full lg:w-2/3">
+      <table class="w-full border-gray-200 mb-3">
+        <h2 class="text-2xl mt-5 font-semibold"><%= "エピソード" %></h2>
+        <div class="border-b border-gray-200 mb-1"></div>
+        <tbody id="table-episode">
+            <% if @post.episodes.empty? %>
+              <p>エピソードはまだありません</p>
+            <% else %>
+              <%= render @episodes %>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
+  <%= render 'episodes/form', episode: @episode, post: @post %>
 </div>
