@@ -1,20 +1,22 @@
 <tr id="episode-<%= episode.id %>">
-  <td class="w-16">
-    <% # image_tag "sample", width: "50", height: "50", class: "rounded-full" %>
+  <td class="w-1">
   </td>
   <td>
-    <h3 class="text-sm font-semibold"><i class="fa-regular fa-user"></i><%= episode.user.name %></h3>
+    <div class="flex justify-between">
+      <h3 class="text-sm font-semibold"><i class="fa-regular fa-user"></i><%= episode.user.name %></h3>
+      <% if current_user&.own?(episode) %><!--- 自分の投稿なら削除ボタン表示(未ログインだとcurrent_userがnill⇒ぼっち演算子でnilを返し、if文がfalse扱い) --->
+        <div class="action">
+          <ul class="flex justify-end space-x-2">
+            <li>
+              <%= link_to episode_path(episode), class: "delete-episode-link", data: { turbo_method: :delete, turbo_confirm: "削除しますか?" } do %>
+                <i class="fa-solid fa-trash" style="color: #F49849;"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
     <p class="text-gray-700"><%= simple_format(episode.body) %></p>
+    <div class="border-dotted border-b border-gray-200 mb-3"></div>
   </td>
-  <% if current_user&.own?(episode) %><!--- 自分の投稿なら削除ボタン表示(未ログインだとcurrent_userがnill⇒ぼっち演算子でnilを返し、if文がfalse扱い) --->
-    <td class="action">
-      <ul class="flex justify-end space-x-2">
-        <li>
-          <%= link_to episode_path(episode), class: "delete-episode-link", data: { turbo_method: :delete, turbo_confirm: "削除しますか?" } do %>
-            <i class="fa-solid fa-trash" style="color: #FFD43B;"></i>
-          <% end %>
-        </li>
-      </ul>
-    </td>
-  <% end %>
 </tr>
