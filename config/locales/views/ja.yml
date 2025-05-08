@@ -13,6 +13,7 @@ ja:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新出来ませんでした"
       require_login: ログインしてください
+      deleted: "%{item}を削除しました"
   posts:
     new:
       title: ワード作成
