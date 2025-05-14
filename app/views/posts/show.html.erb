@@ -1,26 +1,32 @@
 <div class="container mx-auto pt-5">
   <div class="mb-3">
     <div class="lg:w-2/3 lg:mx-auto">
-      <h1 class="text-3xl font-bold"><%= "ワード詳細" %></h1>
-      <article class="bg-white shadow rounded-lg overflow-hidden">
-        <div class="p-6">
-          <div class="flex flex-col md:flex-row gap-4">
-            <div class="md:w-3/4">
-              <h3 class="text-xl font-semibold inline"><%= @post.title %></h3>
-              <ul class="flex gap-2 text-gray-500 text-sm">
-                <li><%= "by #{@post.user.name}" %></li>
-              </ul>
-            </div>
-          </div>
-          <p class="mt-4 text-gray-800"><%= simple_format(@post.body) %></p>
-        </div>
+      <article class="bg-white">
+        <h1 class="text-3xl font-bold"><%= @post.title %></h1>
+        <ul class="flex justify-end space-x-2">
+          <li class="flex gap-2 text-gray-500 text-sm"><%= "by #{@post.user.name}" %></li>
+          <li>
+            <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
+              <i class="fa-solid fa-pencil" style="color: #F49849;"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to post_path(@post), id: "button-delete-#{@post.id}", data: { turbo_method: :delete, turbo_confirm: "削除しますか?" } do %>
+              <i class="fa-solid fa-trash" style="color: #F49849;"></i>
+            <% end %>
+          </li>
+        </ul>
+        <h2 class="text-2xl font-semibold inline"><%= "意味" %></h2>
+        <div class="border-b border-gray-200 mb-1"></div>
+        <p class="mt-2 text-gray-800"><%= simple_format(@post.body) %></p>
       </article>
     </div>
   </div>
   <div class="flex justify-center">
-    <div class="w-full lg:w-8/12">
-      <table class="w-full border-collapse border border-gray-200">
-        <h1 class="text-3xl font-bold"><%= "エピソード" %></h1>
+    <div class="w-full lg:w-2/3">
+      <table class="w-full border-gray-200 mb-3">
+        <h2 class="text-2xl mt-5 font-semibold"><%= "エピソード" %></h2>
+        <div class="border-b border-gray-200 mb-1"></div>
         <tbody id="table-episode">
             <% if @post.episodes.empty? %>
               <p>エピソードはまだありません</p>
@@ -29,7 +35,7 @@
             <% end %>
         </tbody>
       </table>
-      <%= render 'episodes/form', episode: @episode, post: @post %>
     </div>
   </div>
+  <%= render 'episodes/form', episode: @episode, post: @post %>
 </div>
